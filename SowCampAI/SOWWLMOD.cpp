@@ -6,7 +6,7 @@
 
 void CXSowwl::LogWrite( std::string chiave, std::string chiave2, int numero )
  {
-#ifdef SOW_UNLOCK
+#ifdef _DEBUG
 std::string stringa;
 
 //if  (chiave == "85e Ligne / 1e Batallion")
@@ -34,7 +34,7 @@ convert << numero;      // insert the textual representation of 'Number' in the 
 
 void CXSowwl::LogWriteChar( std::string chiave, std::string chiave2, std::string chiave3 )
  {
-#ifdef SOW_UNLOCK
+#ifdef _DEBUG
 std::string stringa;
 
 //if  (chiave == "55e Ligne / 1e Batallion")
@@ -56,7 +56,7 @@ if ( attivo == 1 )
 
 void CXSowwl::OfficerLogWrite( std::string chiave, std::string chiave2, int numero )
  {
-#ifdef SOW_UNLOCK
+#ifdef _DEBUG
 
 std::string stringa;
 
@@ -87,7 +87,7 @@ convert << numero;      // insert the textual representation of 'Number' in the 
 
 void CXSowwl::OfficerLogWriteChar( std::string chiave, std::string chiave2, std::string chiave3 )
  {
-#ifdef SOW_UNLOCK
+#ifdef _DEBUG
 std::string stringa;
 
 //if  (chiave == "55e Ligne / 1e Batallion")
@@ -109,7 +109,7 @@ if ( attivo == 2 )
 
 void CXSowwl::SpecificLogWrite( std::string chiave, std::string chiave2, int numero )
  {
-#ifdef SOW_UNLOCK
+#ifdef _DEBUG
 
 std::string stringa;
 
@@ -138,7 +138,7 @@ convert << numero;      // insert the textual representation of 'Number' in the 
 
 void CXSowwl::SpecificLogWriteChar( std::string chiave, std::string chiave2, std::string chiave3 )
  {
-#ifdef SOW_UNLOCK
+#ifdef _DEBUG
 std::string stringa;
 
 //if  (chiave == "55e Ligne / 1e Batallion")

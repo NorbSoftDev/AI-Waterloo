@@ -164,6 +164,7 @@ struct SSowModFuncs
 	bool (*CUnitCanWheel  )( const CUnit *me );
 	bool (*CUnitCanFight  )( const CUnit *me );
 	bool (*CUnitPlyrCtrl  )( const CUnit *me );
+	bool (*CUnitIsSplit   )( const CUnit* me );
 	bool (*CUnitAttached  )( const CUnit *me );
 	bool (*CUnitIsFlanked )( const CUnit *me );
 	bool (*CUnitIsOfficer )( const CUnit *me );

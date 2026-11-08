@@ -356,6 +356,7 @@ class CXUnit
 		bool Locked      () const;
 		bool Blocked     () const;
 		bool NeedAmmo    ( int * = NULL );
+		bool IsSplit     () const;
 		bool Standing    () const;
 		bool Marching    () const;
 		bool CanWheel    () const;

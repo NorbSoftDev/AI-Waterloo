@@ -434,6 +434,7 @@ bool CXUnit::Marching  () const { return gMod.CUnitMarching  ( m_unit ); }
 bool CXUnit::CanWheel  () const { return gMod.CUnitCanWheel  ( m_unit ); }
 bool CXUnit::CanFight  () const { return gMod.CUnitCanFight  ( m_unit ); }
 bool CXUnit::PlyrCtrl  () const { return gMod.CUnitPlyrCtrl  ( m_unit ); }
+bool CXUnit::IsSplit   () const { return gMod.CUnitIsSplit   ( m_unit ); }
 bool CXUnit::Attached  () const { return gMod.CUnitAttached  ( m_unit ); }
 bool CXUnit::IsFlanked () const { return gMod.CUnitIsFlanked ( m_unit ); }
 bool CXUnit::IsOfficer () const { return gMod.CUnitIsOfficer ( m_unit ); }

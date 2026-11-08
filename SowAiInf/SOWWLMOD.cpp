@@ -7,10 +7,9 @@
 void CXSowwl::LogWrite( std::string chiave, std::string chiave2, int numero )
 {
 
-#ifndef SOW_UNLOCK
+#ifndef _DEBUG
 	numero = 0;
-#endif
-#ifdef SOW_UNLOCK
+#else 
 	std::string stringa;
 
 	int flag = 1;
@@ -41,7 +40,7 @@ void CXSowwl::LogWrite( std::string chiave, std::string chiave2, int numero )
 void CXSowwl::LogWriteChar( std::string chiave, std::string chiave2, std::string chiave3 )
 {
 
-#ifdef SOW_UNLOCK
+#ifdef _DEBUG
 	std::string stringa;
 
 	int flag = 1;
@@ -65,11 +64,9 @@ void CXSowwl::LogWriteChar( std::string chiave, std::string chiave2, std::string
 
 void CXSowwl::OfficerLogWrite( std::string chiave, std::string chiave2, int numero )
 {
-#ifndef SOW_UNLOCK
+#ifndef _DEBUG
 	numero = 0;
-#endif
-
-#ifdef SOW_UNLOCK
+#else
 
 	std::string stringa;
 
@@ -102,7 +99,7 @@ void CXSowwl::OfficerLogWrite( std::string chiave, std::string chiave2, int nume
 
 void CXSowwl::OfficerLogWriteChar( std::string chiave, std::string chiave2, std::string chiave3 )
 {
-#ifdef SOW_UNLOCK
+#ifdef _DEBUG
 	std::string stringa;
 
 	int flag = 2;
@@ -126,12 +123,9 @@ void CXSowwl::OfficerLogWriteChar( std::string chiave, std::string chiave2, std:
 
 void CXSowwl::SpecificLogWrite( std::string chiave, std::string chiave2, int numero )
 {
-#ifndef SOW_UNLOCK
+#ifndef _DEBUG
 	numero = 0;
-#endif
-
-#ifdef SOW_UNLOCK
-
+#else
 	std::string stringa;
 
 	int flag = 3;
@@ -160,7 +154,7 @@ void CXSowwl::SpecificLogWrite( std::string chiave, std::string chiave2, int num
 
 void CXSowwl::SpecificLogWriteChar( std::string chiave, std::string chiave2, std::string chiave3 )
 {
-#ifdef SOW_UNLOCK
+#ifdef _DEBUG
 	std::string stringa;
 
 	int flag = 3;

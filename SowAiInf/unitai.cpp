@@ -80,11 +80,13 @@ bool StopOverlapTarget( CXUnit base )
 
 	return false;
 }
+
 //*************************************************************************************************************
 //*************************************************************************************************************
 // Function: StopOverlap
 //*************************************************************************************************************
 //*************************************************************************************************************
+
 bool StopOverlap( CXUnit base )
 {
 
@@ -115,6 +117,7 @@ bool StopOverlap( CXUnit base )
 	return false;
 
 }
+
 //*************************************************************************************************************
 //*************************************************************************************************************
 // Function: SkirmFallback
@@ -230,6 +233,7 @@ bool EnemyAhead( CXUnit base )
 	return bRes;
 
 }
+
 //*************************************************************************************************************
 //*************************************************************************************************************
 // Function: ObstacleBeforeMe
@@ -309,11 +313,13 @@ bool ObstacleAheadMe( CXUnit base )
 	return false;
 
 }
+
 //*************************************************************************************************************
 //*************************************************************************************************************
 // Function: IsShooting
 //*************************************************************************************************************
 //*************************************************************************************************************
+
 bool IsShooting( CXUnit base )
 {
 	int temp = 0;
@@ -513,6 +519,7 @@ int WheelingThreatEvaluation(int i, CXUnit base, SEnemy *enemy, int myquad )
 	return enemy[i].threat;
 
 }
+
 //*************************************************************************************************************
 //*************************************************************************************************************
 // Function: MarchingTacticalMovements
@@ -552,8 +559,8 @@ bool MarchingTacticalMovements( CXUnit base)
 	}
 
 	return false;
-
 }
+
 //*************************************************************************************************************
 //*************************************************************************************************************
 // Function: StandingTacticalMovements
@@ -906,7 +913,6 @@ bool CheckAllTargets( CXUnit base, SEnemy *enemy, CXUnit &closest, CXUnit &soldm
 		enemy[quad].men  += u;
 		enemy[quad].dist += u * dist;
 	}
-
 
 	base.SetMainTarg(NULL);
 	if (enemyextension[myquad].closesttarget.Valid())  //if nearest target already in shooting range; frontal arc has the priority
@@ -1360,11 +1366,8 @@ bool StandTargetAmmoAI( CXUnit base, SEnemy *enemy, CXUnit closest, const int &m
 	SXComm comm;
 	CXOff  lead = base.Leader();	
 
-	
-
 	if ( ( base.State() != eUnitStand && base.State() != eUnitShoot ) || base.Ammo() < 1 )
 		return true;	
-
 
 	// see if it's arty and if we should charge it (no frontal target and no squares)
 	if ( base.Closest()==NULL && closest!=NULL && ( closest.UnitType() == eUnitArt || closest.UnitType() == eUnitAmmo ) 
@@ -1380,8 +1383,7 @@ bool StandTargetAmmoAI( CXUnit base, SEnemy *enemy, CXUnit closest, const int &m
 		}
 	}
 
-	//---
-	//check if in column formation I can advance at place of remain standing
+	// Make sure we can fire from the current formation
 	if ( base.Leader().Valid() && base.Closest() && base.IsFormType(eFTAssault) && GetInfCommand(base.Leader(), eSTStandTarget, comm, base ) )   
 	{	
 		if (comm.Comm() != eComMax)
@@ -1400,9 +1402,6 @@ bool StandTargetAmmoAI( CXUnit base, SEnemy *enemy, CXUnit closest, const int &m
 		base.ICommand( eComRun );
 		return false;
 	}
-
-
-
 	quad      = -1;
 	bCanWheel = true;
 
@@ -1673,10 +1672,6 @@ bool AdvanceFallbackTargetAI( CXUnit base, SEnemy *enemy )
 	}
 	else if ( bNoRealTarg && base.State() == eUnitFallback )  //if falling back and no real target I start to run
 	{
-		//if ( base.CanRun() )
-		//	base.ICommand( eComState, eUnitRun );
-		//else
-		//	base.ICommand( eComState, eUnitMarch );
 		base.ICommand( eComGetAway );  //getaway for avoid strange paths
 	}
 	// if we are advancing or falling back, we should stop ai processing here
@@ -1689,6 +1684,7 @@ bool AdvanceFallbackTargetAI( CXUnit base, SEnemy *enemy )
 // returning false usually means we're gonna stop
 //*************************************************************************************************************
 //*************************************************************************************************************
+
 bool MarchTargetAI( CXUnit base, SEnemyExtension * )
 {
 	bool bRes = true;
@@ -1778,6 +1774,7 @@ bool MarchTargetAI( CXUnit base, SEnemyExtension * )
 // Function: MarchNoTargetAI
 //*************************************************************************************************************
 //*************************************************************************************************************
+
 bool MarchNoTargetAI( CXUnit base )
 {
 	bool bRes = true;

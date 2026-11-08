@@ -450,6 +450,7 @@ static bool StandTargetAmmoAI( CXUnit base, SEnemy *enemy, CXUnit closest, const
 // Function: StandNoTargetAI
 //*************************************************************************************************************
 //*************************************************************************************************************
+
 static bool StandNoTargetAI( CXUnit base, CXUnit closest, CXUnit soldmel, SEnemy * )
 {
 	int i;
