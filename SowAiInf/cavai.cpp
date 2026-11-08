@@ -540,7 +540,7 @@ static bool StandNoTargetAI( CXUnit base, CXUnit closest, CXUnit soldmel, SEnemy
 		{
 			int dist = base.EnemyCloseYds();
 
-			if ( dist <= DISTCAV1AUTOMELEE && ( base.EnemyClose().GetUnitTypeVal(eUnitCav) || base.EnemyClose().IsArt()) )   //only if is cavalry or artillery i add them to the target list, if under the automelee range
+			if ( dist <= DISTCAV1AUTOMELEE && ( base.EnemyClose().UnitType() == eUnitCav || base.EnemyClose().IsArt()) )   //only if is cavalry or artillery i add them to the target list, if under the automelee range
 				base.TargAdd( base.EnemyClose(), dist );
 
 
