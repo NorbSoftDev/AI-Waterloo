@@ -15,7 +15,7 @@
 
 
 #define AI_GUARDYDS   50
-#define AI_FOLLOWTICS (15 * TICSPERSEC)
+#define AI_FOLLOWTICS 900 // counts AI passes, not ticks
 #define AI_CANTFOLLOW    3
 
 #define DISTCAV1AUTOMELEE 100
